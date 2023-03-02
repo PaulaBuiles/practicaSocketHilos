@@ -13,6 +13,7 @@ public class Client {
         scanner.useDelimiter("\n");
 
         try {
+            System.out.println("Bienvenido al sistema de servicio al cliente");
             Socket socket = new Socket("localhost", 5050);
             DataInputStream in = new DataInputStream(socket.getInputStream());
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
@@ -26,7 +27,7 @@ public class Client {
             ClientHilo clientHilo = new ClientHilo(in, out);
             clientHilo.start();
             clientHilo.join();
-            System.out.println("Bienvenido al sistema de servicio al cliente");
+            System.out.println("Gracias por utilizar nuestro sistema de servicio al cliente");
 
 
         } catch (IOException | InterruptedException e) {
